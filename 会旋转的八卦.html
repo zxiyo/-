@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>八卦图</title>
+		<style>
+			*{
+				margin: 0;
+				border: 0;
+				background-color: darkgray;
+			}
+			.1{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(50%,50%);
+				height: 500px;
+			}
+			#八卦{
+				width: 500px;
+				height: 500px;
+				border: 1px solid aqua;/* 边框线大小和颜色 */
+				border-radius:250px;/* 边框弯曲 */
+				position: relative;
+				overflow: hidden;/* 超出的部分自动隐藏 */
+				animation: x 0s infinite linear;/* 名称 一圈的时间 一直转 线性转无延迟*/
+				box-shadow:0px 0px 5px #333333;/* 八卦阴影  */    
+				margin: auto;
+				
+			}
+			@keyframes x{/* 申明关键帧 */
+				from{
+					transform: rotate(0deg);/* 一开始转0度 */
+				}
+				to{
+					transform: rotate(360deg);/* 最后转360度 */
+				}
+			}
+			.semicircle_left,.semicircle_right{
+				width: 250px;
+				height: 500px;
+				position: absolute;
+			}
+			.semicircle_left{
+				background-color: black;
+			}
+			.semicircle_right{
+				background-color: white;
+				left: 250px;
+			}
+			.circle_black{
+				width: 250px;
+				height: 250px;
+				background-color: #000000;
+				border-radius: 125px;
+				margin-left: -125px;
+			}
+			.circle_white{
+				width: 250px;
+				height: 250px;
+				background-color: white;
+				border-radius: 125px;
+				margin-top: 250px;
+				margin-left: 125px;
+				
+			}
+			.small_circle_black,.small_circle_white{
+				width: 125px;
+				height: 125px;
+				border-radius: 62.5px;
+				transform: translateY(50%);/* 垂直居中 */
+				position: absolute;
+				z-index: 2;
+			}
+			.small_circle_white{
+				background-color: black;
+				margin-left: 60px;
+			}
+			.small_circle_black{
+				background-color: white;
+				margin-left: 60px;
+			}
+		</style>
+	</head>
+	<body>
+	    <div class="1">
+			<div id="八卦">
+				<div class="semicircle_left">
+					<div class="circle_white">
+						<div class="small_circle_white">
+						</div>
+					</div>
+				</div>
+				<div class="semicircle_right">
+					<div class="circle_black">
+						<div class="small_circle_black">
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>
